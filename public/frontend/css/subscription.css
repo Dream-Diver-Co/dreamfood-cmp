@@ -1,0 +1,171 @@
+/* subscription start */
+
+.subscription{
+    background-color: #f1f1f1;
+    /* padding: 14px; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2) !important;
+    height:100% !important;
+}
+
+/* Subacriptions.css */
+
+.wrap {
+    padding: 20px; /* Adjust padding as needed */
+    background: #333333;
+  }
+
+  /* Pricing Table styles */
+  /* These are general PT styles, and theme comes later */
+  .pricing-section {
+    color: #ffffff; /* Adjust text color as needed */
+  }
+  .pen-title{
+    font-size: 34px;
+    color: white;
+  }
+
+  .pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 30px;
+    width: 100%;
+  }
+
+  .pricing-item {
+    align-items: stretch;
+    display: flex;
+    flex: 0 1 330px;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+  }
+
+  .pricing-feature-list {
+    text-align: left;
+  }
+
+  .pricing-action {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  /* Pricing theme */
+  .pricing-theme .pricing-item {
+    background: rgba(255, 255, 255, 0.08);
+    /* border: 1px solid rgba(255, 255, 255, 0.4); */
+    border-radius: 10px;
+    color: #000000;
+    cursor: pointer;
+    /* margin-bottom: 20px; */
+    transition: border-color 0.3s, background 0.3s;
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+  .pricing-theme .pricing-item:last-child {
+    margin-right: 0;
+  }
+  .pricing-theme .pricing-item:hover {
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .pricing-title {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 8px 0;
+    padding: 24px;
+    position: relative;
+  }
+  .pricing-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    width: 30%;
+    height: 2px;
+    background: #ff0000;
+  }
+  .pricing-title-modal{
+    font-size: 28px;
+    font-weight: 400;
+    margin: 8px 0;
+    padding: 2px;
+    position: relative;
+  }
+  .pricing-title-modal:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    width: 30%;
+    height: 2px;
+    background: orange;
+  }
+
+  
+
+  .pricing-price {
+    font-size: 48px;
+    /* font-weight: 400;
+    padding: 18px 0 0 0;
+    position: relative;
+    z-index: 100; */
+  }
+
+  .pricing-currency {
+    font-size: 26px;
+    vertical-align: super;
+  }
+
+  .pricing-sentence {
+    margin: 0 auto;
+    /* padding: 14px 20px;
+    font-size: 16px; */
+  }
+
+  .pricing-feature-list {
+    font-size: 15px;
+    list-style: none;
+    font-weight: bolder;
+    /* margin: 0 30px; */
+    padding: 15px 0;
+}
+
+  .pricing-feature {
+    line-height: 1.4;
+  }
+
+  .pricing-feature:before {
+    content: "\2713";
+    display: inline-block;
+    padding-right: 14px;
+    vertical-align: middle;
+  }
+
+  .pricing-action {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    color: black; /* Adjust button text color as needed */
+    flex: none;
+    font-weight: 700;
+    margin: auto 20px 20px;
+    padding: 16px 20px;
+    transition: background 0.3s;
+  }
+
+  .pricing-action:focus,
+  .pricing-action:hover {
+    background: #ffffff;
+  }
+
+
+
+/* subscription end */

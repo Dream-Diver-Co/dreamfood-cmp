@@ -1,0 +1,80 @@
+label.required::after{
+    content: "*";
+    color: rgb(223, 18, 18);
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.admin-logo {
+    height: 66px;
+    width: 240px;
+}
+
+.admin-logo-sm {
+    height: 67px;
+    width: 70px;
+}
+
+.navbar-brand-box {
+    padding: 0 0rem;
+}
+
+.admin-index-img{
+    height: 30px;
+    width: 70px;
+}
+
+.Admincontact-btn{
+    width: 55px;
+    height: 25px;
+    margin: 2px;
+}
+
+.action-btn{
+    height: 30px;
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+.admin-home {
+    padding: 24px;
+    color: white;
+}
+
+.admin-home:hover{
+    color: #FFC800;
+}
+
+.status{
+    background-color: #FFC800;
+}
+
+.sidebar-menu ul li a {
+    display: block;
+    padding: .625rem 1.5rem;
+    color: #fefefe !important;
+    position: relative;
+    font-size: 13.3px;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+.sidebar-menu ul li a i {
+    display: inline-block;
+    min-width: 1.5rem;
+    padding-bottom: .125em;
+    font-size: 1.1rem;
+    line-height: 1.40625rem;
+    vertical-align: middle;
+    color: #ffffff !important;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    opacity: .75;
+}
+
+
+.sidebar-menu ul li a:hover {
+    color: #b8d5f3 !important;
+}
