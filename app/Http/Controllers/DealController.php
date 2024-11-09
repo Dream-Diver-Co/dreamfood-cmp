@@ -36,7 +36,7 @@ class DealController extends Controller
         // Create the deal with calculated discount price
         Deal::create(array_merge($request->all(), ['discount_price' => $discountPrice]));
 
-        return redirect()->route('deals.index')->with('success', 'Deal created successfully.');
+        return redirect()->back()->with('success', 'Deal created successfully.');
     }
 
     public function show(Deal $deal)

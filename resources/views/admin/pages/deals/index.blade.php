@@ -3,6 +3,31 @@
 @section('title', 'Profile')
 @section('content')
 
+<!-- Success and error messages -->
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            @if(session('success'))
+                <div id="success-message" class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+            @if($errors->has('error'))
+                <div id="error-message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $errors->first('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
+
 <!-- start page title -->
 <div class="row">
     <div class="col-12">
@@ -31,8 +56,8 @@
             <th>Food Price</th>
             <th>Discount (%)</th>
             <th>Discount Price</th>
-            <th>Frequency</th>
-            <th>Total Use</th>
+            {{-- <th>Frequency</th>
+            <th>Total Use</th> --}}
             <th>Actions</th>
         </tr>
     </thead>
@@ -44,8 +69,8 @@
             <td>{{ $product->product->price }}</td>
             <td>{{ $product->discount }}%</td>
             <td>{{ $product->discount_price }}</td>
-            <td>{{ $product->frequency }}</td>
-            <td>{{ $product->total_use }}</td>
+            {{-- <td>{{ $product->frequency }}</td>
+            <td>{{ $product->total_use }}</td> --}}
             <td>
                 <a href="{{ route('deals.show', $product->id) }}" class="btn btn-info btn-sm">View</a>
                 <a href="{{ route('deals.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
@@ -59,6 +84,26 @@
         @endforeach
     </tbody>
 </table>
+
+<script>
+    // Auto-hide success and error messages after 5 seconds
+    document.addEventListener('DOMContentLoaded', function () {
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+
+        if (successMessage) {
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        if (errorMessage) {
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+    });
+</script>
 
 @endsection
 

@@ -3,6 +3,31 @@
 @section('title', 'Create Deal')
 @section('content')
 
+ <!-- Success and error messages -->
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            @if(session('success'))
+                <div id="success-message" class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+            @if($errors->has('error'))
+                <div id="error-message" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $errors->first('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
+
 <!-- start page title -->
 <div class="row">
     <div class="col-12">
@@ -49,7 +74,7 @@
         <input type="text" name="discount_price" id="discount_price" class="form-control" readonly>
     </div>
 
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="frequency">Frequency</label>
         <input type="number" name="frequency" id="frequency" class="form-control" >
     </div>
@@ -57,7 +82,7 @@
     <div class="form-group">
         <label for="total_use">Total Use</label>
         <input type="number" name="total_use" id="total_use" class="form-control">
-    </div>
+    </div> --}}
 
     <button type="submit" class="btn btn-success">Save Deal</button>
 </form>
@@ -88,6 +113,26 @@
             document.getElementById('discount_price').value = ''; // Clear discount price if input is invalid
         }
     }
+</script>
+
+<script>
+    // Auto-hide success and error messages after 5 seconds
+    document.addEventListener('DOMContentLoaded', function () {
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+
+        if (successMessage) {
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        if (errorMessage) {
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+    });
 </script>
 
 @endsection

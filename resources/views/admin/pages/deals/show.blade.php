@@ -24,8 +24,8 @@
 <h1>Deal Details</h1>
 <p><strong>Product:</strong> {{ $deal->product->name }}</p>
 <p><strong>Discount:</strong> {{ $deal->discount }}%</p>
-<p><strong>Frequency:</strong> {{ $deal->frequency }}</p>
-<p><strong>Total Use:</strong> {{ $deal->total_use }}</p>
+{{-- <p><strong>Frequency:</strong> {{ $deal->frequency }}</p>
+<p><strong>Total Use:</strong> {{ $deal->total_use }}</p> --}}
 <a href="{{ route('deals.index') }}" class="btn btn-primary">Back to Deals</a>
 
 @endsection

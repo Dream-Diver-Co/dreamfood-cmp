@@ -227,38 +227,6 @@
     }
 </script>
 
-{{-- <script>
-    function openEditModal(contact) {
-        // Populate modal fields with contact data
-        document.getElementById('contact_id').value = contact.id;
-        document.getElementById('edit_name').value = contact.name;
-        document.getElementById('edit_email').value = contact.email;
-        document.getElementById('edit_phone').value = contact.phone;
-        document.getElementById('edit_address').value = contact.address;
-        document.getElementById('edit_date').value = contact.date;
-        document.getElementById('edit_day_name').value = contact.day_name;
-        document.getElementById('edit_note').value = contact.note || '';
-
-        // Set the form action for updating
-        document.getElementById('editForm').action = "{{ url('specialcontacts') }}/" + contact.id;
-
-        // Disable the update button initially
-        const updateButton = document.querySelector('#editForm button[type="submit"]');
-        updateButton.disabled = true;
-
-        // Track if any field is modified
-        const fields = document.querySelectorAll('#editForm input, #editForm textarea');
-        fields.forEach(field => {
-            field.addEventListener('input', () => {
-                updateButton.disabled = false; // Enable button if any field is modified
-            });
-        });
-
-        // Show the modal
-        $('#editModal').modal('show');
-    }
-</script> --}}
-
 
 <script>
     // Auto-hide success and error messages after 5 seconds
