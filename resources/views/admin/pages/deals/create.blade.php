@@ -45,6 +45,13 @@
 </div>
 <!-- end page title -->
 
+<div class="card">
+    <div class="card-header">Foods Details</div>
+    <div class="card-body">
+
+    </div>
+</div>
+
 <h1>Create Deal</h1>
 <form action="{{ route('deals.store') }}" method="POST">
     @csrf

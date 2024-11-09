@@ -21,6 +21,13 @@
 </div>
 <!-- end page title -->
 
+<div class="card">
+    <div class="card-header">Foods Details</div>
+    <div class="card-body">
+
+    </div>
+</div>
+
 <h1>Edit Deal</h1>
 <form action="{{ route('deals.update', $deal->id) }}" method="POST">
     @csrf
