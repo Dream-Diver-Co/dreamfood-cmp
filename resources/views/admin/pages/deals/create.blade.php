@@ -3,8 +3,25 @@
 @section('title', 'Create Deal')
 @section('content')
 
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">Create Deal</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">{{ env('APP_NAME') }}</a></li>
+                    <li class="breadcrumb-item active">Create Deal</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
  <!-- Success and error messages -->
-<div class="container my-3">
+ <div class="container">
     <div class="row">
         <div class="col-12">
             @if(session('success'))
@@ -28,71 +45,51 @@
     </div>
 </div>
 
-<!-- start page title -->
-<div class="row">
-    <div class="col-12">
-        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-            <h4 class="mb-sm-0">Create Deal</h4>
-
-            <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">{{ env('APP_NAME') }}</a></li>
-                    <li class="breadcrumb-item active">Create Deal</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end page title -->
-
 <div class="card">
-    <div class="card-header">Foods Details</div>
+    <div class="card-header">Create Deal</div>
     <div class="card-body">
+        <form action="{{ route('deals.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="product_id">Product</label>
+                <select name="product_id" id="product_id" class="form-control" onchange="updatePrice()">
+                    <option value="">Select a product</option>
+                    @foreach($products as $product)
+                    <option value="{{ $product->id }}" data-price="{{ $product->price }}">{{ $product->name }}</option>
+                    @endforeach
+                </select>
+            </div>
 
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price" class="form-control" readonly>
+
+            </div>
+
+            <div class="form-group">
+                <label for="discount">Discount (%)</label>
+                <input type="number" name="discount" id="discount" class="form-control" required oninput="calculateDiscountPrice()">
+            </div>
+
+            <div class="form-group">
+                <label for="discount_price">Discount Price</label>
+                <input type="text" name="discount_price" id="discount_price" class="form-control" readonly>
+            </div> <br>
+
+            {{-- <div class="form-group">
+                <label for="frequency">Frequency</label>
+                <input type="number" name="frequency" id="frequency" class="form-control" >
+            </div>
+
+            <div class="form-group">
+                <label for="total_use">Total Use</label>
+                <input type="number" name="total_use" id="total_use" class="form-control">
+            </div> <br> --}}
+
+            <button type="submit" class="btn btn-success">Save Deal</button>
+        </form>
     </div>
 </div>
-
-<h1>Create Deal</h1>
-<form action="{{ route('deals.store') }}" method="POST">
-    @csrf
-    <div class="form-group">
-        <label for="product_id">Product</label>
-        <select name="product_id" id="product_id" class="form-control" onchange="updatePrice()">
-            <option value="">Select a product</option>
-            @foreach($products as $product)
-            <option value="{{ $product->id }}" data-price="{{ $product->price }}">{{ $product->name }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="price">Price</label>
-        <input type="text" name="price" id="price" class="form-control" readonly>
-
-    </div>
-
-    <div class="form-group">
-        <label for="discount">Discount (%)</label>
-        <input type="number" name="discount" id="discount" class="form-control" required oninput="calculateDiscountPrice()">
-    </div>
-
-    <div class="form-group">
-        <label for="discount_price">Discount Price</label>
-        <input type="text" name="discount_price" id="discount_price" class="form-control" readonly>
-    </div>
-
-    {{-- <div class="form-group">
-        <label for="frequency">Frequency</label>
-        <input type="number" name="frequency" id="frequency" class="form-control" >
-    </div>
-
-    <div class="form-group">
-        <label for="total_use">Total Use</label>
-        <input type="number" name="total_use" id="total_use" class="form-control">
-    </div> --}}
-
-    <button type="submit" class="btn btn-success">Save Deal</button>
-</form>
 
 <script>
     function updatePrice() {
