@@ -41,11 +41,11 @@
     </div>
     <div class="form-group">
         <label for="frequency">Frequency</label>
-        <input type="number" name="frequency" id="frequency" class="form-control" value="{{ $deal->frequency }}" required>
+        <input type="number" name="frequency" id="frequency" class="form-control" value="{{ $deal->frequency }}" >
     </div>
     <div class="form-group">
         <label for="total_use">Total Use</label>
-        <input type="number" name="total_use" id="total_use" class="form-control" value="{{ $deal->total_use }}" required>
+        <input type="number" name="total_use" id="total_use" class="form-control" value="{{ $deal->total_use }}" >
     </div>
     <button type="submit" class="btn btn-success">Update Deal</button>
     <a href="{{ route('deals.index') }}" class="btn btn-secondary">Cancel</a>

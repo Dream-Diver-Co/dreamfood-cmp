@@ -12,8 +12,8 @@ class CreateDealsTable extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->decimal('discount', 5, 2);
-            $table->integer('frequency');
-            $table->integer('total_use');
+            $table->integer('frequency')->nullable();
+            $table->integer('total_use')->nullable();
             $table->decimal('discount_price', 10, 2)->nullable();
             $table->timestamps();
         });

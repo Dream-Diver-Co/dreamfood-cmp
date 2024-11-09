@@ -25,8 +25,8 @@ class DealController extends Controller
         $request->validate([
             'product_id' => 'required|exists:products,id',
             'discount' => 'required|numeric',
-            'frequency' => 'required|integer',
-            'total_use' => 'required|integer',
+            'frequency' => 'nullable|integer',
+            'total_use' => 'nullable|integer',
         ]);
 
         // Calculate the product price and discount price
@@ -55,8 +55,8 @@ class DealController extends Controller
         $request->validate([
             'product_id' => 'required|exists:products,id',
             'discount' => 'required|numeric',
-            'frequency' => 'required|integer',
-            'total_use' => 'required|integer',
+            'frequency' => 'nullable|integer',
+            'total_use' => 'nullable|integer',
         ]);
 
         // Calculate the product price and discount price

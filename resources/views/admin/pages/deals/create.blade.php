@@ -36,7 +36,7 @@
     <div class="form-group">
         <label for="price">Price</label>
         <input type="text" name="price" id="price" class="form-control" readonly>
-        
+
     </div>
 
     <div class="form-group">
@@ -51,12 +51,12 @@
 
     <div class="form-group">
         <label for="frequency">Frequency</label>
-        <input type="number" name="frequency" id="frequency" class="form-control" required>
+        <input type="number" name="frequency" id="frequency" class="form-control" >
     </div>
 
     <div class="form-group">
         <label for="total_use">Total Use</label>
-        <input type="number" name="total_use" id="total_use" class="form-control" required>
+        <input type="number" name="total_use" id="total_use" class="form-control">
     </div>
 
     <button type="submit" class="btn btn-success">Save Deal</button>
